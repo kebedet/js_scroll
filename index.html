@@ -22,7 +22,7 @@
 </head>
 <body>
 
-	Coding is <div id="magic"> fun!!</div>
+	Coding is <div id="magic"></div>
 
 	<script>
 
@@ -35,11 +35,11 @@
 		{
 			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
 
-			if(character_counter == words[word_counter].length)
+			if(character_counter == words[word_counter].length+1)
 			{
 				word_counter++; 	//choose a different word
 				character_counter = 0;	//start over with the first character of the word
-				el.innerHTML = '';  //set the html to be blank
+				el.innerHTML = "&nbsp";  //set the html to be blank
 
 				//if we're displaying the last word, go back to the first word
 				if(word_counter == words.length)
@@ -47,7 +47,7 @@
 			}
 		}
 
-		setInterval(updateText,300);
+		setInterval(updateText,500);
 
 	</script>
 
